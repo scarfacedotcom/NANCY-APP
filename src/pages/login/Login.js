@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useLogin } from '../../hooks/useLogin'
 
-// styles
+// styles & images
+import PasswordIcon from '../../assets/password_icon.svg'
 import './Login.css'
 
 export default function Login() {
@@ -28,11 +29,12 @@ export default function Login() {
       </label>
       <label>
         <span>password:</span>
+        {/* <img src={PasswordIcon} alt="password logo" className='password' /> */}
         <input 
           required
           type="password" 
           onChange={(e) => setPassword(e.target.value)} 
-          value={password} 
+          value={password}
         />
       </label>
       {!isPending && <button className="btn">Log in</button>}

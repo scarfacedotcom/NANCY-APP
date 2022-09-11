@@ -1,0 +1,8 @@
+/* .auth-form img {
+  display: inline;
+} */
+
+img.password {
+  height: 25px;
+  width: 25px;
+}
