@@ -12,18 +12,30 @@
   text-decoration: none;
   color: inherit;
 }
+.project-list.dark a {
+  background-color: black;
+}
 .project-list h4 {
   font-size: 0.9em;
   color: var(--heading-color);
+}
+.project-list.dark h4 {
+  color: var(--heading-color-dark);
 }
 .project-list p {
   color: var(--text-color);
   font-size: 0.9em;
 }
+.project-list.dark p {
+  color: var(--text-color-dark);
+}
 .project-list .assigned-to {
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid #eee;
+}
+.project-list .assigned-to.dark {
+  border-top: 1px solid rgb(251, 251, 251);
 }
 .project-list ul {
   margin: 10px 0;

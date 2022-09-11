@@ -6,12 +6,20 @@
   background: #fbfbfb;
   color: var(--heading-color);
 }
+.user-list.dark {
+  background: #010101;
+  color: var(--heading-color);
+}
 .user-list h2 {
   text-align: right;
   margin-bottom: 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
   font-size: 1.2em;
+}
+.user-list.dark h2 {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 .user-list .user-list-item {
   display: flex;

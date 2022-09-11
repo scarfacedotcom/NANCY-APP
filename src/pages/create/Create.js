@@ -5,6 +5,7 @@ import { timestamp } from '../../firebase/config'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { useFirestore } from '../../hooks/useFirestore'
 import { useHistory } from 'react-router-dom'
+import { useTheme } from '../../hooks/useTheme'
 
 // styles
 import './Create.css'
@@ -22,6 +23,7 @@ export default function Create() {
   const { documents } = useCollection('users')
   const [ users, setUsers ] = useState([])
   const { user } = useAuthContext()
+  const {mode} = useTheme()
 
   // form field values
   const [name, setName] = useState('')
@@ -85,8 +87,8 @@ export default function Create() {
   }
 
   return (
-    <div className='create-form'>
-      <h2 className="page-title">Create a New Project</h2>
+    <div className={`create-form ${mode}`}>
+      <h2 className={`page-title ${mode}`}>Create a New Project</h2>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Project Name:</span>
@@ -129,8 +131,8 @@ export default function Create() {
             isMulti
           />
         </label>
-        <button className="btn">Add Project</button>
-        {formError && <p className="error">{formError}</p> }
+        <button className={`btn ${mode}`}>Add Project</button>
+        {formError && <p className={`error ${mode}`}>{formError}</p> }
 
       </form>
     </div>

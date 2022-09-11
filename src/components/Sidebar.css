@@ -7,6 +7,10 @@
   position: relative;
   color: #fff;
 }
+.sidebar.dark {
+  background: var(--primary-color-dark);
+  color: black;
+}
 .sidebar-content {
   position: fixed;
   width: inherit;
@@ -17,6 +21,9 @@
   letter-spacing: 1px;
   padding: 40px 30px;
   border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.sidebar .user.dark {
+  border-bottom: 1px solid rgba(217, 45, 45, 0.2);
 }
 .sidebar .links {
   margin-top: 80px;
@@ -33,15 +40,28 @@
   color: #fff;
   box-sizing: border-box;
 }
+.sidebar .links.dark a {
+  color: rgb(0, 0, 0);
+}
 .sidebar .links img {
   margin-right: 10px;
   filter: invert(100%);
+}
+.sidebar .links.dark img {
+  filter: invert(20%);
 }
 .sidebar .links a.active {
   color: #555;
   background: var(--bg-color);
   border-radius: 20px 0 0 20px;
 }
+.sidebar .links.dark a.active {
+  color: rgb(255, 255, 255);
+  background: #333;
+}
 .sidebar .links .active img {
   filter: invert(40%);
+}
+.sidebar .links.dark .active img {
+  filter: invert(100%);
 }

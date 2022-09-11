@@ -11,15 +11,15 @@ import AddIcon from '../assets/add_icon.svg'
 
 export default function Sidebar() {
   const {user} = useAuthContext()
-  const { color } = useTheme()
+  const { color, mode  } = useTheme()
   return (
-    <div className="sidebar" style={{ background: color }}>
-      <div className="sidebar-content" >
-        <div className="user">
+    <div className={`sidebar ${mode}`} style={{ background: color }}>
+      <div className={`sidebar-content ${mode}`}>
+        <div className={`user ${mode}`}>
           <Avatar src={ user.photoURL } />
           <p>Hey {user.displayName}</p>
         </div>
-        <nav className="links">
+        <nav className={`links ${mode}`}>
           <ul>
             <li>
               <NavLink exact to="/">
