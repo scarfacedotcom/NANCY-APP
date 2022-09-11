@@ -5,6 +5,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 import './Navbar.css'
 import Temple from '../assets/temple.svg'
+import ThemeSelector from './ThemeSelector'
 
 export default function Navbar() {
   const { logout, isPending } = useLogout()
@@ -18,6 +19,7 @@ export default function Navbar() {
           <img src={Temple} alt="scarface logo" />
           <span>Nancy App</span>
         </li>
+        <ThemeSelector />
 
         {!user && (
         <>

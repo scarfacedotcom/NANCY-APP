@@ -11,10 +11,10 @@ import AddIcon from '../assets/add_icon.svg'
 
 export default function Sidebar() {
   const {user} = useAuthContext()
-  const { color, changeColor } = useTheme()
+  const { color } = useTheme()
   return (
     <div className="sidebar" style={{ background: color }}>
-      <div className="sidebar-content" onClick={() => changeColor('red')} >
+      <div className="sidebar-content" >
         <div className="user">
           <Avatar src={ user.photoURL } />
           <p>Hey {user.displayName}</p>
