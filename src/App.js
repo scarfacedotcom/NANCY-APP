@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
+import { useTheme } from './hooks/useTheme'
 
 // styles
 import './App.css'
@@ -16,9 +17,10 @@ import OnlineUsers from './components/OnlineUsers'
 
 function App() {
   const { authIsReady, user } = useAuthContext()
+  const { mode } = useTheme()
 
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}

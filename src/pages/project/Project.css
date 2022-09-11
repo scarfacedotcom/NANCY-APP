@@ -11,10 +11,17 @@
   padding: 30px;
   border-radius: 4px;
 }
+.project-summary.dark {
+  background-color: rgb(0, 0, 0);
+}
 .project-summary .due-date {
   margin: 10px 0;
   font-size: 0.9em;
   color: var(--title-color);
+}
+.project-summary .due-date.dark {
+  /* color: var(--title-color); */
+  color: rgb(255, 254, 254);
 }
 .project-summary .details {
   margin: 30px 0;
@@ -22,9 +29,16 @@
   line-height: 1.8em;
   font-size: 0.9em;
 }
+.project-summary .details.dark {
+  color: rgb(255, 255, 255);
+}
 .project-summary h4 {
   color: var(--text-color);
   font-size: 0.9em;
+}
+.project-summary.dark h4{
+  color: var(--text-color-dark);
+
 }
 .project-summary .assigned-users {
   display: flex;
@@ -50,6 +64,9 @@
 .project-comments h4 {
   color: var(--heading-color);
 }
+.project-comments.dark h4 {
+  color: var(--heading-color-dark);
+}
 .project-comments li {
   padding: 16px;
   border-radius: 4px;
@@ -58,10 +75,18 @@
   box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
   background: #fff;
 }
+.project-comments.dark li {
+  border: 1px solid #030303;
+  background: #030303;
+}
 .comment-author {
   display: flex;
   align-items: center;
   color: var(--title-color);
+}
+.comment-author.dark {
+  /* color: var(--title-color); */
+  color: rgb(0, 0, 0);
 }
 .comment-author .avatar {
   width: 30px;
@@ -73,7 +98,13 @@
   font-size: 0.9em;
   margin: 4px 0 10px;
 }
+.comment-date.dark {
+  color: var(--text-color-dark);
+}
 .comment-content {
   color: var(--text-color);
   font-size: 0.9em;
+}
+.comment-content.dark {
+  color: var(--text-color-dark);
 }

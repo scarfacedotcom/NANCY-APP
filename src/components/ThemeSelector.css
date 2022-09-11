@@ -15,7 +15,8 @@
 }
 
 .mode-toggle {
-  margin-right: auto;
+  /* margin-left: auto; */
+  margin-right: 400px;
 }
 .mode-toggle img {
   width: 24px;

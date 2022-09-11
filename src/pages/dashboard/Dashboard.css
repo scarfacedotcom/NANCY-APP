@@ -27,3 +27,11 @@
 .project-filter button.active {
   color: var(--primary-color);
 } 
+
+.project-filter.dark nav {
+  background-color: #333;
+}
+
+.project-filter.dark button {
+  background-color: #333;
+}

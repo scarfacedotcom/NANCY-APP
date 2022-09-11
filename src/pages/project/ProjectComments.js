@@ -4,12 +4,14 @@ import { timestamp } from "../../firebase/config"
 import { useAuthContext } from "../../hooks/useAuthContext"
 import { useFirestore } from "../../hooks/useFirestore"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useTheme } from "../../hooks/useTheme"
 
 
 export default function ProjectComments({ project }) {
   const [ newComment, setNewComment ] = useState('')
   const { user } = useAuthContext()
   const { response, updateDocument } = useFirestore('projects')
+  const {mode} = useTheme()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -30,26 +32,26 @@ export default function ProjectComments({ project }) {
 
   }
   return (
-    <div className="project-comments">
+    <div className={`project-comments ${mode}`}>
       <h4>Project Comments</h4>
       
       <ul>
         {project.comments.length > 0 && project.comments.map(comment => (
           <li key={comment.id}>
-            <div className="comment-author">
+            <div className={`comment-author ${mode}`}>
               <Avatar src={comment.photoURL} />
-              <p>{comment.displayName}</p>
+              <p className={` ${mode}`}>{comment.displayName}</p>
             </div>
-            <div className="comment-date">
+            <div className={`comment-date ${mode}`}>
               <p>{formatDistanceToNow(comment.createdAt.toDate(), { addSuffix: true })}</p>
             </div>
-            <div className="comment-content">
+            <div className={`comment-content ${mode}`}>
               <p>{comment.content}</p>
             </div>
           </li>
         ))}
       </ul>
-      <form className="add-comment" onSubmit={handleSubmit}>
+      <form className={`add-comment ${mode}`} onSubmit={handleSubmit}>
         <label>
           <span>add new comment:</span>
           <textarea
@@ -58,7 +60,7 @@ export default function ProjectComments({ project }) {
             value={newComment}
           ></textarea>
         </label>
-        <button className="btn">Add Comment</button>
+        <button className={`btn ${mode}`}>Add Comment</button>
       </form>
       
     </div>

@@ -3,10 +3,13 @@
 /* variables */
 :root {
   --heading-color: #444;
+  --heading-color-dark: rgb(251, 251, 251);
   --text-color: #999;
+  --text-color-dark: rgb(251, 251, 251);
   --primary-color: #0f03ec;
+  --primary-color-dark: #ffffff;
   --highlight-color: #d13267;
-  --bg-color: #f4f4f4;
+  --bg-color: #86c6de;
 }
 
 /* base styles */
@@ -30,6 +33,13 @@ ul {
   color: var(--heading-color);
   display: inline-block;
 }
+.page-title.dark {
+  color: var(--heading-color-dark);
+}
+.dark {
+  color: var(--heading-color-dark);
+}
+
 .btn {
   background: #fff;
   padding: 8px 12px;
@@ -39,9 +49,14 @@ ul {
   font-size: 1em;
   border: 1px solid var(--primary-color);
 }
-.btn:hover {
-  color: #fff;
-  background-color: var(--primary-color);
+.btn.dark {
+  background: rgb(10, 10, 10);
+  color: var(--primary-color-dark);
+  border: 1px solid black;
+}
+.btn.dark:hover {
+  color: rgb(2, 2, 2);
+  background-color: var(--primary-color-dark);
 }
 
 /* forms */
