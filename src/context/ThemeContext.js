@@ -26,7 +26,7 @@ export function ThemeProvider ({children}) {
   }
 
   return (
-    <ThemeContext.Provider value={{...state, changeColor}} >
+    <ThemeContext.Provider value={{...state, changeColor, changeMode}} >
       {children}
     </ThemeContext.Provider>
   )
