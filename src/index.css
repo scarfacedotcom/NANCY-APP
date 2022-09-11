@@ -9,7 +9,7 @@
   --primary-color: #0f03ec;
   --primary-color-dark: #ffffff;
   --highlight-color: #d13267;
-  --bg-color: #86c6de;
+  --bg-color: #a9cef3;
 }
 
 /* base styles */
@@ -40,23 +40,41 @@ ul {
   color: var(--heading-color-dark);
 }
 
-.btn {
-  background: #fff;
+/* .btn {
+  background: linear-gradient(to right, #778ae9, #aec4ef);
   padding: 8px 12px;
-  border-radius: 4px;
-  color: var(--primary-color);
+  border-radius: 20px;
+  color: black;
   cursor: pointer;
   font-size: 1em;
-  border: 1px solid var(--primary-color);
+  border: 0.1px solid var(--primary-color);
+} */
+.btn {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: Poppins, sans-serif;
+    margin-left: 5%;
+    font-size: 1em;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+.btn:hover {
+  color: black;
+  background: linear-gradient(to right, #E040FB, #9C27B0);
 }
 .btn.dark {
-  background: rgb(10, 10, 10);
-  color: var(--primary-color-dark);
-  border: 1px solid black;
+  background: linear-gradient(to right, #fbfafb, #4b4a4b);
+  color: black
 }
 .btn.dark:hover {
   color: rgb(2, 2, 2);
-  background-color: var(--primary-color-dark);
+  background: white;
 }
 
 /* forms */

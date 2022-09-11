@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { useLogin } from '../../hooks/useLogin'
+import { useTheme } from '../../hooks/useTheme'
 
 // styles & images
-import PasswordIcon from '../../assets/password_icon.svg'
 import './Login.css'
 
 export default function Login() {
   const { login, isPending, error } = useLogin()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const {mode} = useTheme()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,8 +17,8 @@ export default function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form">
-      <h2>login</h2>
+    <form onSubmit={handleSubmit} className={`auth-form ${mode}`}>
+      <h2 className={`${mode}`}>Login</h2>
       <label>
         <span>email:</span>
         <input
@@ -29,7 +30,6 @@ export default function Login() {
       </label>
       <label>
         <span>password:</span>
-        {/* <img src={PasswordIcon} alt="password logo" className='password' /> */}
         <input 
           required
           type="password" 
@@ -37,9 +37,9 @@ export default function Login() {
           value={password}
         />
       </label>
-      {!isPending && <button className="btn">Log in</button>}
-      {isPending && <button className="btn" disabled>Loading...</button>}
-      {error && <div className="error">{error}</div> }
+      {!isPending && <button className={`btn ${mode}`}>Log in</button>}
+      {isPending && <button className={`btn ${mode}`} disabled>Loading...</button>}
+      {error && <div className= {`error ${mode}`}>{error}</div> }
     </form>
   )
 }

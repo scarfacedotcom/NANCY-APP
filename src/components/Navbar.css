@@ -31,7 +31,28 @@
   filter: invert(100%);
 }
 .navbar a {
-  color: #333;
   text-decoration: none;
   margin-right: 20px;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+.navbar a:hover {
+  color: black;
+  background: linear-gradient(to right, #E040FB, #9C27B0);
+}
+
+a.dark {
+  background: linear-gradient(to right, #fbfafb, #4b4a4b);
+  color: rgb(245, 245, 245)
+}
+
+a.dark:hover {
+  color: rgb(2, 2, 2);
+  background: white;
 }

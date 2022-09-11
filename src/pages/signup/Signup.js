@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useSignup } from '../../hooks/useSignup'
+import { useTheme } from '../../hooks/useTheme'
 
 // styles
 import './Signup.css'
@@ -11,6 +12,7 @@ export default function Signup() {
   const [thumbnail, setThumbnail] = useState(null)
   const [thumbnailError, setThumbnailError] = useState(null)
   const { signup, isPending, error } = useSignup()
+  const {mode} = useTheme()
   
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -41,10 +43,10 @@ export default function Signup() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form">
+    <form onSubmit={handleSubmit} className={`auth-form ${mode}`}>
       <h2>sign up</h2>
       <label>
-        <span>email:</span>
+        <span className={mode}>email:</span>
         <input
           required 
           type="email" 
@@ -79,9 +81,9 @@ export default function Signup() {
         />
         {thumbnailError && <div className="error">{thumbnailError}</div>}
       </label>
-      {!isPending && <button className="btn">Sign up</button>}
-      {isPending && <button className="btn" disabled>Loading...</button>}
-      {error && <div className="error">{error}</div>}
+      {!isPending && <button className={`btn ${mode}`}>Sign up</button>}
+      {isPending && <button className={`btn ${mode}`} disabled>Loading...</button>}
+      {error && <div className={`error ${mode}`}>{error}</div>}
     </form>
   )
 }
