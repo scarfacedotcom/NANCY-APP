@@ -22,7 +22,7 @@
   color: var(--heading-color-dark);
 }
 .navbar .logo img {
-  margin-right: 10px;
+  margin-right: 9px;
   filter: invert(25%);
   width: 36px;
   margin-top: -8px;
